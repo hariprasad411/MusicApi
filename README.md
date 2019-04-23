@@ -11,28 +11,31 @@ Problem statement
 
 Here MusicApi/resource/album.txt file has the 3 Album sets, and each Album has some Songs and the duration of songs.
 
-Calculate the median of songs  in each album and display the songs whose duration are less than the median 
+Now we Calculate the median of songs  in each album and display the songs whose duration are less than the median 
 in Ascending order.
 
 =====================================================================================================================
 Key Functionality
 =====================================================================================================================
 
-a) This is a Spring Restful project which performs the CRUD operations on Music Api
-b) Hibernate is used to provide the one to many mapping functionality
-c) SpringSecurity with Basic Authentication is provide for securing the webservices
-d)  Inbuilt h2 database is used for retrieving the credentails for SpringSeurity
-e) A Restful webservice is reads data from file and is exposed as webservice
-f) A restful webservice call reads the file and updates the database.
-g) All CRUD operations are exposed as webservice and the data is retrievd from hql database
-h) The code deals with two typs of tables ( namely Album and Song)
-i) RESTFUL CLient program has been written to read the data from the exposed webservice. THis is called MusicClient.
-j)LOG4j has been used and proper documentation with comments is provide for each method.
-k) JUnts have been roubustly written for all the code that has been developed.
+a) This is a SPRING RESTFUL project which performs the CRUD operations on Music Api.
+b) Hibernate is used to provide the one to many mapping functionality.
+c) SpringSecurity with Basic Authentication has been used for securing the webservices.
+d)  Inbuilt H2 database is used for retrieving the credentails for SpringSecurity
+e) One of the exposed RESTFUL webservice reads data from file and sends it to the client.
+f) One of the exposed RESTFUL webservice reads the music data from the file and updates the database( Album and Songs table)
+g) All CRUD operations( GET, PUT, POST and DELETE operations ) are exposed as webservice and the data is retrieved from hql database
+h) The code deals with two types of tables ( namely Album and Song)
+i) RESTFUL CLient program has been written to read the data from the exposed webservice. This file is named as MusicClient.java.
+j) LOG4j has been used and proper documentation with comments is provide for each method.Alternativey could have used LOMBOK.
+k) Juints have been roubustly written for all the code that has been developed.
 
 Steps to follow
 a) Run mvn clean install
-b) Upon succesfull build, then run the MusicApplication.java. This starts the spring boot server on 8080 port
+b) Upon succesfull maven build, then run the MusicApplication.java. This starts the spring boot server on 8080 port.
+This  port number can be changed by setting the property on application.properties.
+
+Also could have used Actuators to display the health checks and other useful information.
 
 =====================================================================================================================
 Explanation of Each Webservice EndPOint
@@ -106,7 +109,7 @@ This will update the existing  ALBUM records in the database
 ---------------------------------------------------------------------------------------------------------------- 
 
 
-MusicClient ( REST CLIENT )
+MusicClient.java ( REST CLIENT CONSUMER)
 
 SAMPLE RESPONSE OBTAINED AFTER RUNNING THE MusicClient.java. This client consumes the webservices  that are exposed as part of MusicAPi implementation
 
@@ -143,7 +146,7 @@ SAMPLE RESPONSE OBTAINED AFTER RUNNING THE MusicClient.java. This client consume
 ---------------------------------------------------------------------------------------------------------------- 
 Note
 
-All the responses that are displayed as part of the webservice response are in the Ascending order of the Duration.
+All the responses that are displayed as part of the webservice response are in the Ascending order of the SONG Duration.
 
 
 ---------------------------------------------------------------------------------------------------------------- 
